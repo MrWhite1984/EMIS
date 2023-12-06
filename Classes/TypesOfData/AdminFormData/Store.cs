@@ -12,9 +12,9 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData
         public string address { get; set; }
         public int directorCode { get; set; }
         public int phone { get; set; }
-        public List<Seller> sellers { get; set; }
+        public string sellers { get; set; }
         public int warehouseWorkerCode { get; set; }
-        public Store(int id, string address, int directorCode, int phone, List<Seller> sellers, int warehouseWorkerCode)
+        public Store(int id, string address, int directorCode, int phone, string sellers, int warehouseWorkerCode)
         {
             this.id = id;
             this.address = address;
@@ -23,14 +23,6 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData
             this.sellers = sellers;
             this.warehouseWorkerCode = warehouseWorkerCode;
         }
-        public string GetSellers()
-        {
-            string total = "";
-            foreach(var seller in sellers)
-            {
-                total += total + seller.id + " " + seller.surname + " " + seller.name + " " + seller.patronymic + "\n";
-            }
-            return total;
-        }
+        
     }
 }

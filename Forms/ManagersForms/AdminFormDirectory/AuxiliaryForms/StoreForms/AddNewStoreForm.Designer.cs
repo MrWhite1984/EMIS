@@ -6,7 +6,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -162,6 +161,7 @@
             this.openSellersFormButton.TabIndex = 13;
             this.openSellersFormButton.Text = "Открыть";
             this.openSellersFormButton.UseVisualStyleBackColor = true;
+            this.openSellersFormButton.Click += new System.EventHandler(this.openSellersFormButton_Click);
             // 
             // AddNewStoreForm
             // 

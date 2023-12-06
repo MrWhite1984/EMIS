@@ -39,6 +39,7 @@ namespace Enterprise_Managment_IS.Forms.StoreWarehouseWorkerDirectory
         {
             CreateOrderProductForm createOrderProductForm = new CreateOrderProductForm();
             createOrderProductForm.ShowDialog();
+            DataRefresher.RefreshTable_ProductOrders(productionOrderDataGridView, DataLoader_ProductsOrders.GetAllProductsOrders());
         }
 
         private void StoreWarehouseWorkerForm_FormClosed(object sender, FormClosedEventArgs e)

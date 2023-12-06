@@ -11,6 +11,7 @@ using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataAdderDescendants.Adm
 using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataLoaderDescendants.HRForm;
 using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataLoaderDescendants.StoreForm;
 using Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData;
+using Enterprise_Managment_IS.Forms.ManagersForms.AdminFormDirectory.AuxiliaryForms.StoreForms.AuxiliaryForms;
 
 namespace Enterprise_Managment_IS.Forms.ManagersForms.AdminFormDirectory.AuxiliaryForms.StoreForms
 {
@@ -22,7 +23,6 @@ namespace Enterprise_Managment_IS.Forms.ManagersForms.AdminFormDirectory.Auxilia
             storeCodeTextBox.Text = (DataLoader_Stores.GetAllStores().Count + 1).ToString();
         }
 
-        List<Seller> sellers = new List<Seller>();
 
         private void AddNewStoreForm_Load(object sender, EventArgs e)
         {
@@ -45,13 +45,18 @@ namespace Enterprise_Managment_IS.Forms.ManagersForms.AdminFormDirectory.Auxilia
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            Store store = new Store(Convert.ToInt32(storeCodeTextBox.Text), storeAddressTextBox.Text, Convert.ToInt32(storeDirectorComboBox.Text.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]), Convert.ToInt32(phoneTextBox.Text), sellers, Convert.ToInt32(warehouseWorkerComboBox.Text.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]));
+            Store store = new Store(Convert.ToInt32(storeCodeTextBox.Text), storeAddressTextBox.Text, Convert.ToInt32(storeDirectorComboBox.Text.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]), Convert.ToInt32(phoneTextBox.Text), sellersTextBox.Text, Convert.ToInt32(warehouseWorkerComboBox.Text.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]));
             DataAdder_Stores.AddNewStoreToDB(store);
+            this.Close();
         }
 
         private void openSellersFormButton_Click(object sender, EventArgs e)
         {
-
+            SellersListForm sellersListForm = new SellersListForm()
+            {
+                sellersTextBox = this.sellersTextBox
+            };
+            sellersListForm.ShowDialog();
         }
     }
 }

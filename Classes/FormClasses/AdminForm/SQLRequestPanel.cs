@@ -13,13 +13,20 @@ namespace Enterprise_Managment_IS.Classes.FormClasses.AdminForm
     {
         public static string SelectSQLRequestType(string requestText)
         {
-            var chanks = requestText.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-            string returnText = "";
-            if (chanks[0].ToLower() == "select")
-                returnText = "Невозможно выполнить запрос на выборку";
+            if (requestText != null && requestText != "")
+            {
+                var chanks = requestText.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                string returnText = "";
+                if (chanks[0].ToLower() == "select")
+                    returnText = "Невозможно выполнить запрос на выборку";
+                else
+                    returnText = ExecuteRequestType_2(requestText);
+                return returnText;
+            }
             else
-                returnText = ExecuteRequestType_2(requestText);
-            return returnText;
+            {
+                return null;
+            }
         }
 
         private static string ExecuteRequestType_2(string requestText)

@@ -201,6 +201,7 @@ namespace Enterprise_Managment_IS
         {
             AddNewStoreForm addNewStoreForm = new AddNewStoreForm();
             addNewStoreForm.ShowDialog();
+            DataRefresher.RefreshTable(storesDataGridView, DataLoader_Stores.GetAllStores());
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Enterprise_Managment_IS.Classes.DataWorkerClasses.DataAdderDescendants
             sqlCommand.Parameters.Add("@storeAddress", SqlDbType.VarChar, 70).Value = store.address;
             sqlCommand.Parameters.Add("@directorCode", SqlDbType.Int).Value = store.directorCode;
             sqlCommand.Parameters.Add("@phone", SqlDbType.BigInt).Value = store.phone;
-            sqlCommand.Parameters.Add("@sellers", SqlDbType.VarChar, 30).Value = store.GetSellers();
+            sqlCommand.Parameters.Add("@sellers", SqlDbType.VarChar, 30).Value = store.sellers;
             sqlCommand.Parameters.Add("@warehouseWorkerCode", SqlDbType.Int).Value = store.warehouseWorkerCode;
             sqlCommand.ExecuteNonQuery();
 

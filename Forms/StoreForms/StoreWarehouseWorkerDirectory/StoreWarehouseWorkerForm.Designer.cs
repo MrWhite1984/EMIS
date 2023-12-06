@@ -65,6 +65,7 @@
             this.productsButton.TabIndex = 1;
             this.productsButton.Text = "Продукты";
             this.productsButton.UseVisualStyleBackColor = true;
+            this.productsButton.Visible = false;
             // 
             // ordersToFactoryButton
             // 
