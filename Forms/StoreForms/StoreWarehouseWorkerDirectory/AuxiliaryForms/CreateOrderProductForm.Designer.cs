@@ -120,7 +120,7 @@
             this.Controls.Add(this.productOrderItemDataGridView);
             this.Controls.Add(this.Toolbar);
             this.Name = "CreateOrderProductForm";
-            this.Text = "CreateProductionOrderForm";
+            this.Text = "Создать заказ";
             this.Load += new System.EventHandler(this.CreateOrderProductForm_Load);
             this.Toolbar.ResumeLayout(false);
             this.Toolbar.PerformLayout();

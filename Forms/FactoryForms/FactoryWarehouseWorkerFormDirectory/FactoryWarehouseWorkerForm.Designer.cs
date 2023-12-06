@@ -209,6 +209,7 @@
             this.shippingButton.TabIndex = 4;
             this.shippingButton.Text = "Отгрузка продукта";
             this.shippingButton.UseVisualStyleBackColor = true;
+            this.shippingButton.Visible = false;
             // 
             // equipmentConsumablesButton
             // 

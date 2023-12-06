@@ -152,6 +152,7 @@
             this.addButton.TabIndex = 12;
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // openSellersFormButton
             // 

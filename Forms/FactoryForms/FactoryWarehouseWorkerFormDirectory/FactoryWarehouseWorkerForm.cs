@@ -38,7 +38,10 @@ namespace Enterprise_Managment_IS.Forms.FactoryWarehouseWorkerFormDirectory
         }
         private void FactoryWarehouseWorkerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (!devMode)
+            {
+                Application.Exit();
+            }
         }
 
         //MenuButtons

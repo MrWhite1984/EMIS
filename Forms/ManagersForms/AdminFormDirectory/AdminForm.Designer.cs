@@ -674,6 +674,7 @@
             this.warehousesButton.TabIndex = 1;
             this.warehousesButton.Text = "Склады";
             this.warehousesButton.UseVisualStyleBackColor = true;
+            this.warehousesButton.Visible = false;
             // 
             // storesButton
             // 

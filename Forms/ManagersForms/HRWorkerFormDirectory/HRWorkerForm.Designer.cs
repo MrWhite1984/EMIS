@@ -7,6 +7,8 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        public bool devMode = false;
+
         List<Panel> panels = null;
 
         /// <summary>
@@ -234,6 +236,7 @@
             this.Name = "HRWorkerForm";
             this.Text = "EMIS - Отдел кадров";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HRWorkerForm_FormClosed);
             this.Load += new System.EventHandler(this.HRWorkerForm_Load);
             this.menuFlowLayoutPanel.ResumeLayout(false);
             this.workersPanel.ResumeLayout(false);

@@ -6,7 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        public bool devMode = false;
         List<Panel> panels = null;
 
         /// <summary>
@@ -35,11 +35,11 @@
             this.ordersToFactoryButton = new System.Windows.Forms.Button();
             this.productionOrderPanel = new System.Windows.Forms.Panel();
             this.productionOrderDataGridView = new System.Windows.Forms.DataGridView();
-            this.productionOrderToolbar = new System.Windows.Forms.Panel();
-            this.createOrder = new System.Windows.Forms.Button();
             this.Order_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Store = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Order_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productionOrderToolbar = new System.Windows.Forms.Panel();
+            this.createOrder = new System.Windows.Forms.Button();
             this.menuFlowLayoutPanel.SuspendLayout();
             this.productionOrderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productionOrderDataGridView)).BeginInit();
@@ -101,26 +101,6 @@
             this.productionOrderDataGridView.Size = new System.Drawing.Size(1617, 982);
             this.productionOrderDataGridView.TabIndex = 1;
             // 
-            // productionOrderToolbar
-            // 
-            this.productionOrderToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.productionOrderToolbar.Controls.Add(this.createOrder);
-            this.productionOrderToolbar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.productionOrderToolbar.Location = new System.Drawing.Point(0, 0);
-            this.productionOrderToolbar.Name = "productionOrderToolbar";
-            this.productionOrderToolbar.Size = new System.Drawing.Size(1617, 59);
-            this.productionOrderToolbar.TabIndex = 0;
-            // 
-            // createOrder
-            // 
-            this.createOrder.Location = new System.Drawing.Point(6, 9);
-            this.createOrder.Name = "createOrder";
-            this.createOrder.Size = new System.Drawing.Size(106, 44);
-            this.createOrder.TabIndex = 0;
-            this.createOrder.Text = "Создать...";
-            this.createOrder.UseVisualStyleBackColor = true;
-            this.createOrder.Click += new System.EventHandler(this.createOrder_Click);
-            // 
             // Order_code
             // 
             this.Order_code.HeaderText = "Код заказа";
@@ -141,6 +121,26 @@
             this.Order_date.ReadOnly = true;
             this.Order_date.Width = 250;
             // 
+            // productionOrderToolbar
+            // 
+            this.productionOrderToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.productionOrderToolbar.Controls.Add(this.createOrder);
+            this.productionOrderToolbar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.productionOrderToolbar.Location = new System.Drawing.Point(0, 0);
+            this.productionOrderToolbar.Name = "productionOrderToolbar";
+            this.productionOrderToolbar.Size = new System.Drawing.Size(1617, 59);
+            this.productionOrderToolbar.TabIndex = 0;
+            // 
+            // createOrder
+            // 
+            this.createOrder.Location = new System.Drawing.Point(6, 9);
+            this.createOrder.Name = "createOrder";
+            this.createOrder.Size = new System.Drawing.Size(106, 44);
+            this.createOrder.TabIndex = 0;
+            this.createOrder.Text = "Создать...";
+            this.createOrder.UseVisualStyleBackColor = true;
+            this.createOrder.Click += new System.EventHandler(this.createOrder_Click);
+            // 
             // StoreWarehouseWorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -151,6 +151,7 @@
             this.Name = "StoreWarehouseWorkerForm";
             this.Text = "EMIS - Кладовщик магазина";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StoreWarehouseWorkerForm_FormClosed);
             this.Load += new System.EventHandler(this.StoreWarehouseWorkerForm_Load);
             this.menuFlowLayoutPanel.ResumeLayout(false);
             this.productionOrderPanel.ResumeLayout(false);

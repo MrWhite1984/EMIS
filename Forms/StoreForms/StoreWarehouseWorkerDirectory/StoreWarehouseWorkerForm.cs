@@ -40,5 +40,13 @@ namespace Enterprise_Managment_IS.Forms.StoreWarehouseWorkerDirectory
             CreateOrderProductForm createOrderProductForm = new CreateOrderProductForm();
             createOrderProductForm.ShowDialog();
         }
+
+        private void StoreWarehouseWorkerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!devMode)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

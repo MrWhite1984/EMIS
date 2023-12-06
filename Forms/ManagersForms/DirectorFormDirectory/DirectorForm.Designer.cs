@@ -6,7 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        public bool devMode = false;
         List<Panel> panels = null;
 
         /// <summary>
@@ -148,6 +148,7 @@
             this.Name = "DirectorForm";
             this.Text = "DirectorForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DirectorForm_FormClosed);
             this.Load += new System.EventHandler(this.DirectorForm_Load);
             this.menuFlowLayoutPanel.ResumeLayout(false);
             this.productsPanel.ResumeLayout(false);

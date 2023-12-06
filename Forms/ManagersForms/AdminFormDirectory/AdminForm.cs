@@ -148,11 +148,31 @@ namespace Enterprise_Managment_IS
             factoryWarehouseWorkerForm.ShowDialog();
         }
 
-
         private void HRButton_Click(object sender, EventArgs e)
         {
-            HRWorkerForm hRWorkerForm = new HRWorkerForm();
+            HRWorkerForm hRWorkerForm = new HRWorkerForm()
+            {
+                devMode = true
+            };
             hRWorkerForm.ShowDialog();
+        }
+                
+        private void directorFormButton_Click(object sender, EventArgs e)
+        {
+            DirectorForm directorForm = new DirectorForm()
+            {
+                devMode = true
+            };
+            directorForm.ShowDialog();
+        }
+
+        private void openStoreWarehouseWorkerFormButton_Click(object sender, EventArgs e)
+        {
+            StoreWarehouseWorkerForm storeWarehouseWorkerForm = new StoreWarehouseWorkerForm()
+            {
+                devMode = true
+            };
+            storeWarehouseWorkerForm.ShowDialog();
         }
 
         private void OrderListLocationViewButton_Click(object sender, EventArgs e)
@@ -166,23 +186,11 @@ namespace Enterprise_Managment_IS
             SettingsPanelClass.customizingDropdownListsButton_Click();
         }
 
-        private void directorFormButton_Click(object sender, EventArgs e)
-        {
-            DirectorForm directorForm = new DirectorForm();
-            directorForm.ShowDialog();
-        }
-
         private void sqlRequestApplyButton_Click(object sender, EventArgs e)
         {
             sqlAnswerLabel.Text = SQLRequestPanel.SelectSQLRequestType(sqlRequestTextTextBox.Text);
         }
-
-        private void openStoreWarehouseWorkerFormButton_Click(object sender, EventArgs e)
-        {
-            StoreWarehouseWorkerForm storeWarehouseWorkerForm = new StoreWarehouseWorkerForm();
-            storeWarehouseWorkerForm.ShowDialog();
-        }
-
+        
         private void storesButton_Click(object sender, EventArgs e)
         {
             storesPanel.Visible = true;

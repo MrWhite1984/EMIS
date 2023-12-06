@@ -21,6 +21,14 @@ namespace Enterprise_Managment_IS.Forms.HRWorkerFormDirectory
         {
             InitializeComponent();
         }
+
+        private void HRWorkerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!devMode)
+            {
+                Application.Exit();
+            }
+        }
         private void HRWorkerForm_Load(object sender, EventArgs e)
         {
             panels = new List<Panel>
@@ -48,5 +56,7 @@ namespace Enterprise_Managment_IS.Forms.HRWorkerFormDirectory
             DataDeleter_Workers.DeleteWorkerFromDB(Convert.ToInt32(DataLoader_Workers.GetAllWorkers()[index][0]));
             DataRefresher.RefreshTable(workersDataGridView, DataLoader_Workers.GetAllWorkers());
         }
+
+        
     }
 }

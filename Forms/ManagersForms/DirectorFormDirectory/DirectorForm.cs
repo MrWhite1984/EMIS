@@ -21,6 +21,14 @@ namespace Enterprise_Managment_IS.Forms.DirectorFormDirectory
             InitializeComponent();
         }
 
+        private void DirectorForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!devMode)
+            {
+                Application.Exit();
+            }
+        }
+
         private void addProductButton_Click(object sender, EventArgs e)
         {
             AddProductForm addProductForm = new AddProductForm();
@@ -42,5 +50,7 @@ namespace Enterprise_Managment_IS.Forms.DirectorFormDirectory
                 productsPanel
             };
         }
+
+        
     }
 }
