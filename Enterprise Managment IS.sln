@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterprise Managment IS", "Enterprise Managment IS.csproj", "{C0F9535B-74BF-40CF-A194-C46F51518D54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{2292C620-EBA6-4F8F-AAE5-DC382D804F56}"
+	ProjectSection(SolutionItems) = preProject
+		bin\Debug\net6.0-windows\Data\Settings.json = bin\Debug\net6.0-windows\Data\Settings.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0F9535B-74BF-40CF-A194-C46F51518D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F9535B-74BF-40CF-A194-C46F51518D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F9535B-74BF-40CF-A194-C46F51518D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F9535B-74BF-40CF-A194-C46F51518D54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C6077C3-F096-4FA7-A197-18C65A23C8C9}
+	EndGlobalSection
+EndGlobal
