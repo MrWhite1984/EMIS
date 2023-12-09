@@ -21,6 +21,7 @@ using Enterprise_Managment_IS.Forms.AdminFormDirectory.SettingsForms;
 using Enterprise_Managment_IS.Forms.DirectorFormDirectory;
 using Enterprise_Managment_IS.Forms.FactoryWarehouseWorkerFormDirectory;
 using Enterprise_Managment_IS.Forms.HRWorkerFormDirectory;
+using Enterprise_Managment_IS.Forms.ManagersForms.AdminFormDirectory.AuxiliaryForms.SQLForms;
 using Enterprise_Managment_IS.Forms.ManagersForms.AdminFormDirectory.AuxiliaryForms.StoreForms;
 using Enterprise_Managment_IS.Forms.StoreWarehouseWorkerDirectory;
 
@@ -186,10 +187,7 @@ namespace Enterprise_Managment_IS
             SettingsPanelClass.customizingDropdownListsButton_Click();
         }
 
-        private void sqlRequestApplyButton_Click(object sender, EventArgs e)
-        {
-            sqlAnswerLabel.Text = SQLRequestPanel.SelectSQLRequestType(sqlRequestTextTextBox.Text);
-        }
+        
         
         private void storesButton_Click(object sender, EventArgs e)
         {
@@ -202,6 +200,21 @@ namespace Enterprise_Managment_IS
             AddNewStoreForm addNewStoreForm = new AddNewStoreForm();
             addNewStoreForm.ShowDialog();
             DataRefresher.RefreshTable(storesDataGridView, DataLoader_Stores.GetAllStores());
+        }
+
+        //SQL
+        private void sqlRequestApplyButton_Click(object sender, EventArgs e)
+        {
+            sqlAnswerLabel.Text = SQLRequestPanel.SelectSQLRequestType(sqlRequestTextTextBox.Text);
+        }
+
+        private void showBuiltInQueriesButton_Click(object sender, EventArgs e)
+        {
+            SelectQueryForm selectQueryForm = new SelectQueryForm()
+            {
+                queryTextBox = sqlRequestTextTextBox
+            };
+            selectQueryForm.ShowDialog();
         }
     }
 }

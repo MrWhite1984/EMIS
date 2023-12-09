@@ -96,6 +96,7 @@
             this.sqlAnswerLabel = new System.Windows.Forms.Label();
             this.sqlRequestTextTextBox = new System.Windows.Forms.TextBox();
             this.sqlRequestToolBar = new System.Windows.Forms.Panel();
+            this.showBuiltInQueriesButton = new System.Windows.Forms.Button();
             this.sqlRequestApplyButton = new System.Windows.Forms.Button();
             this.menuFlowLayoutPanel.SuspendLayout();
             this.userPanel.SuspendLayout();
@@ -313,6 +314,7 @@
             this.OrderListLocationViewButton.TabIndex = 9;
             this.OrderListLocationViewButton.Text = "Обзор";
             this.OrderListLocationViewButton.UseVisualStyleBackColor = true;
+            this.OrderListLocationViewButton.Visible = false;
             this.OrderListLocationViewButton.Click += new System.EventHandler(this.OrderListLocationViewButton_Click);
             // 
             // orderListLocationTextBox
@@ -322,6 +324,7 @@
             this.orderListLocationTextBox.Name = "orderListLocationTextBox";
             this.orderListLocationTextBox.Size = new System.Drawing.Size(933, 23);
             this.orderListLocationTextBox.TabIndex = 8;
+            this.orderListLocationTextBox.Visible = false;
             // 
             // OrderListLocationLabel
             // 
@@ -332,6 +335,7 @@
             this.OrderListLocationLabel.Size = new System.Drawing.Size(345, 15);
             this.OrderListLocationLabel.TabIndex = 7;
             this.OrderListLocationLabel.Text = "Расположение директории с текстами заказов (сетевой диск)";
+            this.OrderListLocationLabel.Visible = false;
             // 
             // connStringCreateButton
             // 
@@ -737,12 +741,23 @@
             // sqlRequestToolBar
             // 
             this.sqlRequestToolBar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sqlRequestToolBar.Controls.Add(this.showBuiltInQueriesButton);
             this.sqlRequestToolBar.Controls.Add(this.sqlRequestApplyButton);
             this.sqlRequestToolBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.sqlRequestToolBar.Location = new System.Drawing.Point(0, 0);
             this.sqlRequestToolBar.Name = "sqlRequestToolBar";
             this.sqlRequestToolBar.Size = new System.Drawing.Size(1617, 59);
             this.sqlRequestToolBar.TabIndex = 0;
+            // 
+            // showBuiltInQueriesButton
+            // 
+            this.showBuiltInQueriesButton.Location = new System.Drawing.Point(118, 9);
+            this.showBuiltInQueriesButton.Name = "showBuiltInQueriesButton";
+            this.showBuiltInQueriesButton.Size = new System.Drawing.Size(106, 44);
+            this.showBuiltInQueriesButton.TabIndex = 1;
+            this.showBuiltInQueriesButton.Text = "Системные запросы";
+            this.showBuiltInQueriesButton.UseVisualStyleBackColor = true;
+            this.showBuiltInQueriesButton.Click += new System.EventHandler(this.showBuiltInQueriesButton_Click);
             // 
             // sqlRequestApplyButton
             // 
@@ -759,10 +774,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.storesSettingsPanel);
-            this.Controls.Add(this.developerPanel);
-            this.Controls.Add(this.sqlRequestPanel);
             this.Controls.Add(this.settingsPanel);
+            this.Controls.Add(this.sqlRequestPanel);
+            this.Controls.Add(this.developerPanel);
+            this.Controls.Add(this.storesSettingsPanel);
             this.Controls.Add(this.userPanel);
             this.Controls.Add(this.menuFlowLayoutPanel);
             this.Name = "AdminForm";
@@ -863,5 +878,6 @@
         private TextBox sqlRequestTextTextBox;
         private Button openStoreWarehouseWorkerFormButton;
         private Button addStoreButton;
+        private Button showBuiltInQueriesButton;
     }
 }

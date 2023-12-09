@@ -46,16 +46,24 @@ namespace Enterprise_Managment_IS.Classes.SettingsForm
         public static void expandAllTablesInTheNewDatabase(string connectionString)
         {
             SqlConnection sqlConnection = new SqlConnection(connectionString);
-            string query = createTablesQuery;
-            sqlConnection.Open();
-            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-            sqlCommand.ExecuteNonQuery();
-            sqlConnection.Close();
-            query = createTriggerQuery;
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand(query, sqlConnection);
-            sqlCommand.ExecuteNonQuery();
-            sqlConnection.Close();
+            try
+            {                
+                string query = createTablesQuery;
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.ExecuteNonQuery();
+                query = createTriggerQuery;
+                sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
 
         public static string ShowCreateTablesQuery()
