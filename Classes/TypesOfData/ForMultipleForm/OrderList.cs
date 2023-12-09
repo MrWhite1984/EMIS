@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataAdderDescendants.AdminForm;
+using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataLoaderDescendants.StoreForm;
 using Enterprise_Managment_IS.Classes.Other;
+using Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData;
 
 namespace Enterprise_Managment_IS.Classes.TypesOfData.ForMultipleForm
 {
@@ -54,6 +57,36 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.ForMultipleForm
                 });
 
             File.WriteAllText(path, serializedelements);
+        }
+
+        public static void ExportOrderListToJson(string filePath)
+        {
+            filePath = filePath + @"\" + "OrderList.json";
+            File.Create(filePath).Close();
+            List<OrderList> orderList = new List<OrderList>();
+            char whiteSpace = ' ';
+            foreach (var data in DataLoader_Stores.GetAllStores())
+            {
+                //orderList.Add(new OrderList(Convert.ToInt32(data[0].TrimEnd(whiteSpace)), data[1].TrimEnd(whiteSpace), Convert.ToInt32(data[2].TrimEnd(whiteSpace)), Convert.ToInt32(data[3].TrimEnd(whiteSpace)), data[4].TrimEnd(whiteSpace), Convert.ToInt32(data[5].TrimEnd(whiteSpace))));
+            }
+            var serializedelements = JsonSerializer.Serialize(
+                orderList,
+                typeof(List<OrderList>),
+                new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                });
+
+            File.WriteAllText(filePath, serializedelements);
+        }
+        public static void ImpportStoresFromJson(string filePath, string conString)
+        {
+            filePath = filePath + @"\Stores.json";
+            List<OrderList> orderList = JsonSerializer.Deserialize<List<OrderList>>(File.ReadAllText(filePath));
+            for (int counter = 0; counter < orderList.Count(); counter++)
+            {
+                //DataAdder_OrderList.AddNewStoreToDB(orderList[counter], conString);
+            }
         }
     }
 }

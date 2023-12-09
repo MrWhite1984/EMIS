@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Enterprise_Managment_IS.Classes.Other;
 using Enterprise_Managment_IS.Classes.TypesOfData.HRFormData;
 using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataLoaderDescendants.FactoryWarehouseForm;
+using Enterprise_Managment_IS.Classes.TypesOfData.StoreForm;
 
 namespace Enterprise_Managment_IS.Classes.DataWorkerClasses.DataAdderDescendants.StoreForm
 {
@@ -24,9 +25,41 @@ namespace Enterprise_Managment_IS.Classes.DataWorkerClasses.DataAdderDescendants
             sqlCommand.Parameters.Add("@Order_code", SqlDbType.Int).Value = orderCode;
             sqlCommand.Parameters.Add("@Store", SqlDbType.Int).Value = storeCode;
             sqlCommand.Parameters.Add("@Order_date", SqlDbType.DateTime).Value = DateTime.Now;
-            sqlCommand.ExecuteNonQuery();
+            try
+            {
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
 
-            sqlConnection.Close();
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+        public static void AddNewOrderToDB(OrderFromTheStore orderFromTheStore, string connectionString)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+            string query = "INSERT INTO Order_from_the_store VALUES(@Order_code, @Store, @Order_date);";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.Add("@Order_code", SqlDbType.Int).Value = orderFromTheStore.orderCode;
+            sqlCommand.Parameters.Add("@Store", SqlDbType.Int).Value = orderFromTheStore.store;
+            sqlCommand.Parameters.Add("@Order_date", SqlDbType.DateTime).Value = orderFromTheStore.date;
+            try
+            {
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+
         }
     }
 }

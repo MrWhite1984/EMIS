@@ -44,7 +44,7 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.FactoryWarehouseWorkerForm
 
             File.WriteAllText(filePath, serializedelements);
         }
-        public static void ImpportSuppliesFromJson(string filePath, string conString)
+        public static void ImportSuppliesFromJson(string filePath, string conString)
         {
             filePath = filePath + @"\Providers.json";
             List<Provider> providers = JsonSerializer.Deserialize<List<Provider>>(File.ReadAllText(filePath));

@@ -40,10 +40,7 @@ namespace Enterprise_Managment_IS.Classes.DataWorkerClasses.DataAdderDescendants
             sqlConnection.Open();
             string query = "INSERT INTO ConductedSupplies(Supply_code, Supply_date, Material, Amount_of_material, Provider_code, Supply_type, Supply_sum) VALUES(@Supply_code, @Supply_date, @Supply_list, @AmountOfMaterial, @Provider_code, @Supply_type, @Supply_sum);";
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-            if (DataLoader_ConductedSupplies.GetAllConductedSupplies().Count != 0)
-                sqlCommand.Parameters.Add("@Supply_code", SqlDbType.Int).Value = Convert.ToInt32(DataLoader_ConductedSupplies.GetAllConductedSupplies()[DataLoader_ConductedSupplies.GetAllConductedSupplies().Count - 1][0]) + 1;
-            else
-                sqlCommand.Parameters.Add("@Supply_code", SqlDbType.Int).Value = 1;
+            sqlCommand.Parameters.Add("@Supply_code", SqlDbType.Int).Value = supply.SuplyCode;
             sqlCommand.Parameters.Add("@Supply_date", SqlDbType.DateTime).Value = supply.SupplyDate;
             sqlCommand.Parameters.Add("@Supply_list", SqlDbType.VarChar, 70).Value = supply.Material;
             sqlCommand.Parameters.Add("@AmountOfMaterial", SqlDbType.Int).Value = supply.AmountOfMaterial;

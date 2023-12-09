@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData;
 using Enterprise_Managment_IS.Classes.TypesOfData.FactoryWarehouseWorkerFormData;
+using Enterprise_Managment_IS.Classes.TypesOfData.HRFormData;
+using Enterprise_Managment_IS.Classes.TypesOfData.Other;
+using Enterprise_Managment_IS.Classes.TypesOfData.StoreForm;
 
 namespace Enterprise_Managment_IS.Forms.AdminFormDirectory.SettingsForms
 {
@@ -21,14 +24,24 @@ namespace Enterprise_Managment_IS.Forms.AdminFormDirectory.SettingsForms
 
         private void importButton_Click(object sender, EventArgs e)
         {
-            User.ImpportUsersFromJson(pathToDirectoryTextBox.Text, connectionStringTextBox.Text);
-            Material.ImpportMaterialsFromJson(pathToDirectoryTextBox.Text, connectionStringTextBox.Text);
-            Consumable.ImpportConsumablesFromJson(pathToDirectoryTextBox.Text, connectionStringTextBox.Text);
-            Supply.ImpportSuppliesFromJson(pathToDirectoryTextBox.Text, connectionStringTextBox.Text);
-            Supply.ImpportSuppliesFromJson(pathToDirectoryTextBox.Text, connectionStringTextBox.Text);
-            Supply.ImpportSuppliesFromJson(pathToDirectoryTextBox.Text, connectionStringTextBox.Text);
-            Provider.ImpportSuppliesFromJson(pathToDirectoryTextBox.Text, connectionStringTextBox.Text);
-            Product.ImpportProductsFromJson(pathToDirectoryTextBox.Text, connectionStringTextBox.Text);
+            (string, string) pathAndConnStr = (pathToDirectoryTextBox.Text, connectionStringTextBox.Text);
+            Worker.ImportWorkerFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            User.ImportUsersFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            Provider.ImportSuppliesFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            Material.ImportMaterialsFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            Consumable.ImportConsumablesFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            Supply.ImportSuppliesFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            Supply.ImportCanceledSuppliesFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            Supply.ImportConductedSuppliesFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            Product.ImportProductsFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            FactoryProduct.ImportProductsFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            FactoryProduct.ImportDefectiveFactoryProductsFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            Store.ImportStoresFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            IssueOfConsumables.ImportIssueOfConsumablesFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            IssueOfMaterials.ImportIssueOfMaterialsFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            OrderFromTheStore.ImportOrderFromTheStoreFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            OrderItem.ImportOrderItemFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            Close();
         }
 
         private void viewButton_Click(object sender, EventArgs e)

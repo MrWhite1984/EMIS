@@ -35,6 +35,26 @@ namespace Enterprise_Managment_IS.Classes.DataWorkerClasses.DataAdderDescendants
 
             sqlConnection.Close();
         }
+        public static void AddNewWorkerToDB(int workerCode, Worker worker, string connectionString)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+            string query = "INSERT INTO Workers(Worker_code, Surname, Name, Fname, Birth, Phone_number, Job_title, Emploement_date, Salary, Checking_account) VALUES(@Worker_code, @Surname, @Name, @Fname, @Birth, @Phone_number, @Job_title, @Emploement_date, @Salary, @Checking_account);";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.Add("@Worker_code", SqlDbType.Int).Value = workerCode;
+            sqlCommand.Parameters.Add("@Surname", SqlDbType.VarChar, 30).Value = worker.Surname;
+            sqlCommand.Parameters.Add("@Name", SqlDbType.VarChar, 30).Value = worker.Name;
+            sqlCommand.Parameters.Add("@Fname", SqlDbType.VarChar, 30).Value = worker.FName;
+            sqlCommand.Parameters.Add("@Birth", SqlDbType.Date).Value = worker.Birth;
+            sqlCommand.Parameters.Add("@Phone_number", SqlDbType.BigInt).Value = worker.PhoneNumber;
+            sqlCommand.Parameters.Add("@Job_title", SqlDbType.VarChar, 50).Value = worker.JobTitle;
+            sqlCommand.Parameters.Add("@Emploement_date", SqlDbType.Date).Value = worker.EmploymentDate;
+            sqlCommand.Parameters.Add("@Salary", SqlDbType.Float).Value = worker.Salary;
+            sqlCommand.Parameters.Add("@Checking_account", SqlDbType.BigInt).Value = worker.CheckingAccount;
+            sqlCommand.ExecuteNonQuery();
+
+            sqlConnection.Close();
+        }
 
         //public static void AddNewUserToDB(int userCode, User newUser, string connectionString)
         //{

@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataAdderDescendants.DirectorForm;
 using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataAdderDescendants.FactoryWarehouseForm;
+using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataLoaderDescendants.DirectorForm;
 using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataLoaderDescendants.FactoryWarehouseForm;
 using Enterprise_Managment_IS.Classes.TypesOfData.FactoryWarehouseWorkerFormData;
 
@@ -33,7 +34,7 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData
             File.Create(filePath).Close();
             List<Product> products = new List<Product>();
             char whiteSpace = ' ';
-            foreach (var data in DataLoader_FactoryProducts.GetAllFactoryProducts())
+            foreach (var data in DataLoader_Products.GetAllProducts())
             {
                 products.Add(new Product(Convert.ToInt32(data[0].TrimEnd(whiteSpace)), data[1].TrimEnd(whiteSpace), data[2].TrimEnd(whiteSpace), Convert.ToDecimal(data[3].TrimEnd(whiteSpace))));
             }
@@ -47,7 +48,7 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData
 
             File.WriteAllText(filePath, serializedelements);
         }
-        public static void ImpportProductsFromJson(string filePath, string conString)
+        public static void ImportProductsFromJson(string filePath, string conString)
         {
             filePath = filePath + @"\Products.json";
             List<Product> products = JsonSerializer.Deserialize<List<Product>>(File.ReadAllText(filePath));

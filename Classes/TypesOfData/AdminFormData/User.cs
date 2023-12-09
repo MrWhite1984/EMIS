@@ -48,7 +48,7 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData
             File.WriteAllText(filePath, serializedelements);
         }
 
-        public static void ImpportUsersFromJson(string filePath, string conString)
+        public static void ImportUsersFromJson(string filePath, string conString)
         {
             filePath = filePath + @"\Users.json";
             List<User> users = JsonSerializer.Deserialize<List<User>>(File.ReadAllText(filePath));

@@ -33,5 +33,22 @@ namespace Enterprise_Managment_IS.Classes.DataWorkerClasses.DataAdderDescendants
 
             sqlConnection.Close();
         }
+        public static void AddNewItemToDB(OrderItem orderItem, int orderCode, string connectionString)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+            string query = "INSERT INTO Production_order_elements VALUES(@Element_code, @Order_code, @Product_code, @Amount, @isProduced, @isLoded, @isReceived);";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.Add("@Element_code", SqlDbType.Int).Value = orderItem.code;
+            sqlCommand.Parameters.Add("@Order_code", SqlDbType.Int).Value = orderItem.orderCode;
+            sqlCommand.Parameters.Add("@Product_code", SqlDbType.Int).Value = Convert.ToInt32(orderItem.productName.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]);
+            sqlCommand.Parameters.Add("@Amount", SqlDbType.Int).Value = orderItem.amount;
+            sqlCommand.Parameters.Add("@isProduced", SqlDbType.Bit).Value = false;
+            sqlCommand.Parameters.Add("@isLoded", SqlDbType.Bit).Value = false;
+            sqlCommand.Parameters.Add("@isReceived", SqlDbType.Bit).Value = false;
+            sqlCommand.ExecuteNonQuery();
+
+            sqlConnection.Close();
+        }
     }
 }

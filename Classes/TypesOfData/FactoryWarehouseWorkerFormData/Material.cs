@@ -46,7 +46,7 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.FactoryWarehouseWorkerForm
 
             File.WriteAllText(filePath, serializedelements);
         }
-        public static void ImpportMaterialsFromJson(string filePath, string conString)
+        public static void ImportMaterialsFromJson(string filePath, string conString)
         {
             filePath = filePath + @"\Materials.json";
             List<Material> materials = JsonSerializer.Deserialize<List<Material>>(File.ReadAllText(filePath));

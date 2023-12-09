@@ -30,9 +30,18 @@ namespace Enterprise_Managment_IS.Classes.DataWorkerClasses.DataAdderDescendants
             sqlCommand.Parameters.Add("@Provider_code", SqlDbType.Int).Value = supply.Provider;
             sqlCommand.Parameters.Add("@Supply_type", SqlDbType.VarChar, 50).Value = supply.SupplyType;
             sqlCommand.Parameters.Add("@Supply_sum", SqlDbType.Float).Value = supply.SupplySum;
-            sqlCommand.ExecuteNonQuery();
+            try
+            {
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
 
-            sqlConnection.Close();
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
         public static void AddNewCanceledSuppliesToDB(Supply supply, string conStr)
         {
@@ -40,19 +49,25 @@ namespace Enterprise_Managment_IS.Classes.DataWorkerClasses.DataAdderDescendants
             sqlConnection.Open();
             string query = "INSERT INTO CanceledSupplies(Supply_code, Supply_date, Material, Amount_of_material, Provider_code, Supply_type, Supply_sum) VALUES(@Supply_code, @Supply_date, @Supply_list, @AmountOfMaterial, @Provider_code, @Supply_type, @Supply_sum);";
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-            if (DataLoader_CanceledSupplies.GetAllCanceledSupplies().Count != 0)
-                sqlCommand.Parameters.Add("@Supply_code", SqlDbType.Int).Value = Convert.ToInt32(DataLoader_CanceledSupplies.GetAllCanceledSupplies()[DataLoader_CanceledSupplies.GetAllCanceledSupplies().Count - 1][0]) + 1;
-            else
-                sqlCommand.Parameters.Add("@Supply_code", SqlDbType.Int).Value = 1;
+            sqlCommand.Parameters.Add("@Supply_code", SqlDbType.Int).Value = supply.SuplyCode;
             sqlCommand.Parameters.Add("@Supply_date", SqlDbType.DateTime).Value = supply.SupplyDate;
             sqlCommand.Parameters.Add("@Supply_list", SqlDbType.VarChar, 70).Value = supply.Material;
             sqlCommand.Parameters.Add("@AmountOfMaterial", SqlDbType.Int).Value = supply.AmountOfMaterial;
             sqlCommand.Parameters.Add("@Provider_code", SqlDbType.Int).Value = supply.Provider;
             sqlCommand.Parameters.Add("@Supply_type", SqlDbType.VarChar, 50).Value = supply.SupplyType;
             sqlCommand.Parameters.Add("@Supply_sum", SqlDbType.Float).Value = supply.SupplySum;
-            sqlCommand.ExecuteNonQuery();
+            try
+            {
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch(Exception ex) 
+            {
 
-            sqlConnection.Close();
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
     }
 }

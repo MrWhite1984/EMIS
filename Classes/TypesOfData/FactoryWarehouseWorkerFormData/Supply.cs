@@ -49,15 +49,13 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.FactoryWarehouseWorkerForm
 
             File.WriteAllText(filePath, serializedelements);
         }
-        public static void ImpportSuppliesFromJson(string filePath, string conString)
+        public static void ImportSuppliesFromJson(string filePath, string conString)
         {
             filePath = filePath + @"\Supplies.json";
             List<Supply> supplies = JsonSerializer.Deserialize<List<Supply>>(File.ReadAllText(filePath));
             for (int counter = 0; counter < supplies.Count(); counter++)
             {
-                Supply supply = supplies[counter];
-                supply.SuplyCode = counter + 1;
-                DataAdder_Supplies.AddNewSuppliesToDB(supply, conString);
+                DataAdder_Supplies.AddNewSuppliesToDB(supplies[counter], conString);
             }
         }
 
@@ -81,15 +79,13 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.FactoryWarehouseWorkerForm
 
             File.WriteAllText(filePath, serializedelements);
         }
-        public static void ImpportCanceledSuppliesFromJson(string filePath, string conString)
+        public static void ImportCanceledSuppliesFromJson(string filePath, string conString)
         {
             filePath = filePath + @"\CanceledSupplies.json";
             List<Supply> supplies = JsonSerializer.Deserialize<List<Supply>>(File.ReadAllText(filePath));
             for (int counter = 0; counter < supplies.Count(); counter++)
             {
-                Supply supply = supplies[counter];
-                supply.SuplyCode = counter + 1;
-                DataAdder_CanceledSupplies.AddNewCanceledSuppliesToDB(supply, conString);
+                DataAdder_CanceledSupplies.AddNewCanceledSuppliesToDB(supplies[counter], conString);
             }
         }
 
@@ -113,15 +109,13 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.FactoryWarehouseWorkerForm
 
             File.WriteAllText(filePath, serializedelements);
         }
-        public static void ImpportConductedSuppliesFromJson(string filePath, string conString)
+        public static void ImportConductedSuppliesFromJson(string filePath, string conString)
         {
             filePath = filePath + @"\ConductedSupplies.json";
             List<Supply> supplies = JsonSerializer.Deserialize<List<Supply>>(File.ReadAllText(filePath));
             for (int counter = 0; counter < supplies.Count(); counter++)
             {
-                Supply supply = supplies[counter];
-                supply.SuplyCode = counter + 1;
-                DataAdder_ConductedSupplies.AddNewConductedSuppliesToDB(supply, conString);
+                DataAdder_ConductedSupplies.AddNewConductedSuppliesToDB(supplies[counter], conString);
             }
         }
     }

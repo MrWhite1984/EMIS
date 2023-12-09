@@ -46,7 +46,7 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.FactoryWarehouseWorkerForm
 
             File.WriteAllText(filePath, serializedelements);
         }
-        public static void ImpportConsumablesFromJson(string filePath, string conString)
+        public static void ImportConsumablesFromJson(string filePath, string conString)
         {
             filePath = filePath + @"\Consumables.json";
             List<Consumable> consumables = JsonSerializer.Deserialize<List<Consumable>>(File.ReadAllText(filePath));
