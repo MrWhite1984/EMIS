@@ -39,6 +39,7 @@
             this.Store = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Order_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productionOrderToolbar = new System.Windows.Forms.Panel();
+            this.deleteOrderButton = new System.Windows.Forms.Button();
             this.createOrder = new System.Windows.Forms.Button();
             this.menuFlowLayoutPanel.SuspendLayout();
             this.productionOrderPanel.SuspendLayout();
@@ -101,6 +102,7 @@
             this.productionOrderDataGridView.RowTemplate.Height = 25;
             this.productionOrderDataGridView.Size = new System.Drawing.Size(1617, 982);
             this.productionOrderDataGridView.TabIndex = 1;
+            this.productionOrderDataGridView.Click += new System.EventHandler(this.productionOrderDataGridView_Click);
             // 
             // Order_code
             // 
@@ -125,12 +127,23 @@
             // productionOrderToolbar
             // 
             this.productionOrderToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.productionOrderToolbar.Controls.Add(this.deleteOrderButton);
             this.productionOrderToolbar.Controls.Add(this.createOrder);
             this.productionOrderToolbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.productionOrderToolbar.Location = new System.Drawing.Point(0, 0);
             this.productionOrderToolbar.Name = "productionOrderToolbar";
             this.productionOrderToolbar.Size = new System.Drawing.Size(1617, 59);
             this.productionOrderToolbar.TabIndex = 0;
+            // 
+            // deleteOrderButton
+            // 
+            this.deleteOrderButton.Location = new System.Drawing.Point(1499, 9);
+            this.deleteOrderButton.Name = "deleteOrderButton";
+            this.deleteOrderButton.Size = new System.Drawing.Size(106, 44);
+            this.deleteOrderButton.TabIndex = 1;
+            this.deleteOrderButton.Text = "Удалить";
+            this.deleteOrderButton.UseVisualStyleBackColor = true;
+            this.deleteOrderButton.Click += new System.EventHandler(this.deleteOrderButton_Click);
             // 
             // createOrder
             // 
@@ -174,5 +187,6 @@
         private DataGridViewTextBoxColumn Order_code;
         private DataGridViewTextBoxColumn Store;
         private DataGridViewTextBoxColumn Order_date;
+        private Button deleteOrderButton;
     }
 }

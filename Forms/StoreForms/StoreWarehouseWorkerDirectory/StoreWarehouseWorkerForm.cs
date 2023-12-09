@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataDeleterDescendants.StoreForm;
 using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataLoaderDescendants.FactoryWarehouseForm;
 using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataRefresher;
 using Enterprise_Managment_IS.Classes.FormClasses.FactoryWarehouseWorkerForm;
@@ -48,6 +49,21 @@ namespace Enterprise_Managment_IS.Forms.StoreWarehouseWorkerDirectory
             {
                 Application.Exit();
             }
+        }
+
+        private void deleteOrderButton_Click(object sender, EventArgs e)
+        {
+            DataDeleter_Orders.DeleteOrderFromDB(Convert.ToInt32(productionOrderDataGridView[0, productionOrderDataGridView.CurrentRow.Index].Value));
+            DataRefresher.RefreshTable_ProductOrders(productionOrderDataGridView, DataLoader_ProductsOrders.GetAllProductsOrders());
+        }
+
+        private void productionOrderDataGridView_Click(object sender, EventArgs e)
+        {
+            OrderCheckListForm orderCheckListForm = new OrderCheckListForm()
+            {
+                orderCode = Convert.ToInt32(productionOrderDataGridView[0, productionOrderDataGridView.CurrentRow.Index].Value)
+            };
+            orderCheckListForm.ShowDialog();
         }
     }
 }

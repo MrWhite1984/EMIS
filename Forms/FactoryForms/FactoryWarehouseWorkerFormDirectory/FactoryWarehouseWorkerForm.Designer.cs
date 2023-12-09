@@ -985,8 +985,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.suppliesPanel);
             this.Controls.Add(this.productionOrderPanel);
+            this.Controls.Add(this.suppliesPanel);
             this.Controls.Add(this.consumablePanel);
             this.Controls.Add(this.providerPanel);
             this.Controls.Add(this.productPanel);

@@ -12,10 +12,7 @@ namespace Enterprise_Managment_IS.Classes.SettingsForm
 {
     class NewDBCreaterClass
     {
-        public static void expandAllTablesInTheNewDatabase(string connectionString)
-        {
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-            string query = "" +
+        const string createTablesQuery = "" +
                 "CREATE TABLE Workers (Worker_code INT PRIMARY KEY, Surname VARCHAR(30), Name VARCHAR(30), Fname VARCHAR(30), Birth DATETIME, Phone_number BIGINT, Job_title VARCHAR(50), Emploement_date DATETIME, Salary FLOAT, Checking_account BIGINT)" +
                 "CREATE TABLE Users (User_code INT PRIMARY KEY, Worker INT FOREIGN KEY REFERENCES Workers(Worker_code), LogIn VARCHAR(30), Password VARCHAR(30))" +
                 "CREATE TABLE Providers (Provider_code INT PRIMARY KEY, Provider_name CHAR(70), Provider_address CHAR(70), Provider_description CHAR(250))" +
@@ -32,23 +29,42 @@ namespace Enterprise_Managment_IS.Classes.SettingsForm
                 "CREATE TABLE Store_warehouses_products (ID INT PRIMARY KEY, Store_code INT FOREIGN KEY REFERENCES Stores(Store_code), Product_code INT FOREIGN KEY REFERENCES Products(Product_code), Amount_of_product INT)" +
                 "CREATE TABLE Issue_of_materials(Id INT PRIMARY KEY, Material_code INT FOREIGN KEY REFERENCES Materials(Material_code), Worker_code INT FOREIGN KEY REFERENCES Workers(Worker_code), Issue_date DATETIME)" +
                 "CREATE TABLE Issue_of_consumables(Id INT PRIMARY KEY, Consumable_code INT FOREIGN KEY REFERENCES Consumables(Consumable_code), Worker_code INT FOREIGN KEY REFERENCES Workers(Worker_code), Issue_date DATETIME)" +
-                "CREATE TABLE Production_order_elements(Element_code INT PRIMARY KEY, Order_code INT FOREIGN KEY REFERENCES Order_from_the_store(Order_code), Product_code INT FOREIGN KEY REFERENCES Products(Product_code), Amount INT, isProduced BIT, isLoded BIT, isReceived BIT)";
+                "CREATE TABLE Production_order_elements(Element_code INT PRIMARY KEY, Order_code INT FOREIGN KEY REFERENCES Order_from_the_store(Order_code), Product_code INT FOREIGN KEY REFERENCES Products(Product_code), Amount INT, isProduced BIT, isLoaded BIT, isReceived BIT)";
+
+        const string createTriggerQuery = "" +
+                "CREATE TRIGGER INSERT_Supplly ON Supplies AFTER INSERT AS BEGIN SET NOCOUNT ON;" +
+                "IF(SELECT Supply_date FROM inserted) > GETDATE() " +
+                "BEGIN " +
+                "ROLLBACK TRAN PRINT 'Откат! Дата добавляемой поставки должна соответствовать текущей.' " +
+                "END " +
+                "ELSE " +
+                "BEGIN " +
+                "PRINT 'Запись добавлена.' " +
+                "END " +
+                "END";
+
+        public static void expandAllTablesInTheNewDatabase(string connectionString)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            string query = createTablesQuery;
             sqlConnection.Open();
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
             sqlCommand.ExecuteNonQuery();
             sqlConnection.Close();
-            query = "" +
-                "CREATE TRIGGER INSERT_Supplly ON Supplies AFTER INSERT AS BEGIN SET NOCOUNT ON;" +
-                "IF(SELECT Supply_date FROM inserted) > GETDATE() " +
-                "BEGIN ROLLBACK TRAN PRINT 'Откат! Дата добавляемой поставки должна соответствовать текущей.' " +
-                "END " +
-                "ELSE " +
-                "BEGIN PRINT 'Запись добавлена' " +
-                "END END GO";
+            query = createTriggerQuery;
             sqlConnection.Open();
             sqlCommand = new SqlCommand(query, sqlConnection);
             sqlCommand.ExecuteNonQuery();
             sqlConnection.Close();
+        }
+
+        public static string ShowCreateTablesQuery()
+        {
+            return createTablesQuery;
+        }
+        public static string ShowCreateTriggerQuery()
+        {
+            return createTriggerQuery;
         }
     }
 }

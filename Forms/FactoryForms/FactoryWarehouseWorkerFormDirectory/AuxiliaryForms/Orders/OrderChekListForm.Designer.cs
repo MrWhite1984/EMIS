@@ -35,6 +35,7 @@
             this.OrderListItemLabel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AmountItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isProduced = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isLoad = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.orderListDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(717, 44);
+            this.panel1.Size = new System.Drawing.Size(717, 55);
             this.panel1.TabIndex = 0;
             // 
             // orderListDataGridView
@@ -54,13 +55,15 @@
             this.Item_code,
             this.OrderListItemLabel,
             this.AmountItem,
-            this.isProduced});
+            this.isProduced,
+            this.isLoad});
             this.orderListDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.orderListDataGridView.Location = new System.Drawing.Point(0, 44);
+            this.orderListDataGridView.Location = new System.Drawing.Point(0, 55);
             this.orderListDataGridView.Name = "orderListDataGridView";
             this.orderListDataGridView.RowTemplate.Height = 25;
-            this.orderListDataGridView.Size = new System.Drawing.Size(717, 334);
+            this.orderListDataGridView.Size = new System.Drawing.Size(717, 323);
             this.orderListDataGridView.TabIndex = 1;
+            this.orderListDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderListDataGridView_CellValueChanged);
             // 
             // Item_code
             // 
@@ -71,16 +74,16 @@
             // OrderListItemLabel
             // 
             this.OrderListItemLabel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.OrderListItemLabel.FillWeight = 150.3759F;
+            this.OrderListItemLabel.FillWeight = 151.8716F;
             this.OrderListItemLabel.HeaderText = "Название";
-            this.OrderListItemLabel.MinimumWidth = 300;
+            this.OrderListItemLabel.MinimumWidth = 270;
             this.OrderListItemLabel.Name = "OrderListItemLabel";
             this.OrderListItemLabel.ReadOnly = true;
             // 
             // AmountItem
             // 
             this.AmountItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AmountItem.FillWeight = 49.62405F;
+            this.AmountItem.FillWeight = 48.12833F;
             this.AmountItem.HeaderText = "Количество";
             this.AmountItem.MinimumWidth = 3;
             this.AmountItem.Name = "AmountItem";
@@ -90,6 +93,11 @@
             // 
             this.isProduced.HeaderText = "Произведено";
             this.isProduced.Name = "isProduced";
+            // 
+            // isLoad
+            // 
+            this.isLoad.HeaderText = "Загружено";
+            this.isLoad.Name = "isLoad";
             // 
             // OrderChekListForm
             // 
@@ -114,5 +122,6 @@
         private DataGridViewTextBoxColumn OrderListItemLabel;
         private DataGridViewTextBoxColumn AmountItem;
         private DataGridViewCheckBoxColumn isProduced;
+        private DataGridViewCheckBoxColumn isLoad;
     }
 }
