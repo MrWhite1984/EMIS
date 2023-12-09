@@ -2,8 +2,11 @@ using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataLoaderDescendants.Ad
 using Enterprise_Managment_IS.Classes.DataWorkerClasses.DataLoaderDescendants.HRForm;
 using Enterprise_Managment_IS.Classes.Other;
 using Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData;
+using Enterprise_Managment_IS.Classes.TypesOfData.HRFormData;
 using Enterprise_Managment_IS.Forms.FactoryWarehouseWorkerFormDirectory;
 using Enterprise_Managment_IS.Forms.HRWorkerFormDirectory;
+using Microsoft.VisualBasic.ApplicationServices;
+using User = Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData.User;
 
 namespace Enterprise_Managment_IS
 {
@@ -20,19 +23,32 @@ namespace Enterprise_Managment_IS
         {
             if ((logInTextBox.Text == "admin") && (passwordField.Text == "letmein"))
             {
-                AdminForm adminForm = new AdminForm()
+                List<string[]> workers = DataLoader_Workers.GetWorkersByJobTitle(Settings.GetSettings().comboBoxList["Должность пользователя"][0]);
+                List<string[]> users = new List<string[]>();
+                foreach(var worker in workers)
                 {
-                    devMode = true
-                };
-                adminForm.Show();
-                Hide();
+                    users.AddRange(DataLoader_Users.GetUserByWorkerCode(Convert.ToInt32(worker[0])));
+                }
+                if (users.Count() == 0)
+                {
+                    AdminForm adminForm = new AdminForm()
+                    {
+                        devMode = true
+                    };
+                    adminForm.Show();
+                    Hide();
+                }
             }
             else
             {
                 User user = DataLoader_Users.GetUserByLogInAndPassword(logInTextBox.Text, passwordField.Text);
                 if ((user != null) && (DataLoader_Workers.GetWorkerByCode(user.WorkerCode).JobTitle == Settings.GetSettings().comboBoxList["Должность пользователя"][0]))
                 {
-                    AdminForm adminForm = new AdminForm();
+                    AdminForm adminForm = new AdminForm()
+                    {
+                        //Временно
+                        devMode = true
+                    };
                     adminForm.Show();
                     Hide();
                 }

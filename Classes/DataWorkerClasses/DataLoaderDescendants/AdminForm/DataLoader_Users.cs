@@ -220,6 +220,46 @@ namespace Enterprise_Managment_IS.Classes.DataWorkerClasses.DataLoaderDescendant
                 return null;
         }
 
+        public static List<string[]> GetUserByWorkerCode(int code)
+        {
+            string connectionString = Settings.GetSettings().connectionString;
+            SqlConnection sqlConnection = null;
+            string query = null;
+            SqlCommand sqlCommand = null;
+            SqlDataReader reader = null;
+            List<string[]> data = null;
+            try
+            {
+                sqlConnection = new SqlConnection(connectionString);
+                sqlConnection.Open();
+                query = "SELECT * FROM Users WHERE Worker = @workerCode";
+                sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.Add("@workerCode", SqlDbType.Int).Value = code;
+                reader = sqlCommand.ExecuteReader();
+                data = new List<string[]>();
+                while (reader.Read())
+                {
+                    data.Add(new string[4]);
 
+                    data[data.Count - 1][0] = reader[0].ToString();
+                    data[data.Count - 1][1] = reader[1].ToString();
+                    data[data.Count - 1][2] = reader[2].ToString();
+                    data[data.Count - 1][3] = reader[3].ToString();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                reader.Close();
+                sqlConnection.Close();
+            }
+            if (data != null)
+                return data;
+            else
+                return null;
+        }
     }
 }
