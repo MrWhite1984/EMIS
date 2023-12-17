@@ -227,6 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(486, 350);
             this.Controls.Add(this.addWorkerButton);
             this.Controls.Add(this.jobTitleComboBox);
@@ -250,7 +251,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddWorkerForm";
-            this.Text = "AddWorkerForm";
+            this.Text = "Добавить работника";
             this.Load += new System.EventHandler(this.AddWorkerForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

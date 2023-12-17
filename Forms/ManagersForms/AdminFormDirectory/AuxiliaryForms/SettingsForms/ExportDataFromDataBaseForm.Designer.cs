@@ -97,6 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(664, 119);
             this.Controls.Add(this.viewButton);
             this.Controls.Add(this.directoryNameTextBox);

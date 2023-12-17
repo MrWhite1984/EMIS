@@ -147,6 +147,7 @@
             // menuFlowLayoutPanel
             // 
             this.menuFlowLayoutPanel.AutoScroll = true;
+            this.menuFlowLayoutPanel.BackColor = System.Drawing.Color.Gold;
             this.menuFlowLayoutPanel.Controls.Add(this.materialsButton);
             this.menuFlowLayoutPanel.Controls.Add(this.suppliesButton);
             this.menuFlowLayoutPanel.Controls.Add(this.productButton);
@@ -255,6 +256,7 @@
             // 
             this.materialsDataGridView.AllowUserToAddRows = false;
             this.materialsDataGridView.AllowUserToDeleteRows = false;
+            this.materialsDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.materialsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.materialsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Material_code,
@@ -306,7 +308,7 @@
             // 
             // materialsToolbar
             // 
-            this.materialsToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.materialsToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.materialsToolbar.Controls.Add(this.filterButton);
             this.materialsToolbar.Controls.Add(this.releaseMaterialButton);
             this.materialsToolbar.Controls.Add(this.deleteMaterialButton);
@@ -371,6 +373,7 @@
             // 
             this.suppliesDataGridView.AllowUserToAddRows = false;
             this.suppliesDataGridView.AllowUserToDeleteRows = false;
+            this.suppliesDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.suppliesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.suppliesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Supply_code,
@@ -436,7 +439,7 @@
             // 
             // suppliesToolbar
             // 
-            this.suppliesToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.suppliesToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.suppliesToolbar.Controls.Add(this.generateConductedSuppliesReportButton);
             this.suppliesToolbar.Controls.Add(this.generateActiveSuppliesReportButton);
             this.suppliesToolbar.Controls.Add(this.generateCanceledSuppliesReportButton);
@@ -484,7 +487,9 @@
             // SelectTypeOfSuppliesLabel
             // 
             this.SelectTypeOfSuppliesLabel.AutoSize = true;
+            this.SelectTypeOfSuppliesLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.SelectTypeOfSuppliesLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SelectTypeOfSuppliesLabel.ForeColor = System.Drawing.Color.Gold;
             this.SelectTypeOfSuppliesLabel.Location = new System.Drawing.Point(230, 9);
             this.SelectTypeOfSuppliesLabel.Name = "SelectTypeOfSuppliesLabel";
             this.SelectTypeOfSuppliesLabel.Size = new System.Drawing.Size(59, 15);
@@ -547,6 +552,7 @@
             // 
             this.consumableDataGridView.AllowUserToAddRows = false;
             this.consumableDataGridView.AllowUserToDeleteRows = false;
+            this.consumableDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.consumableDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.consumableDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Consumable_code,
@@ -598,7 +604,7 @@
             // 
             // consumableToolbar
             // 
-            this.consumableToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.consumableToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.consumableToolbar.Controls.Add(this.filterConsumableButton);
             this.consumableToolbar.Controls.Add(this.releaseConsumableButton);
             this.consumableToolbar.Controls.Add(this.deleteConsumableButton);
@@ -651,6 +657,7 @@
             // 
             // providerPanel
             // 
+            this.providerPanel.BackColor = System.Drawing.SystemColors.Control;
             this.providerPanel.Controls.Add(this.providerDataGridView);
             this.providerPanel.Controls.Add(this.providerToolbar);
             this.providerPanel.Location = new System.Drawing.Point(287, 0);
@@ -663,6 +670,7 @@
             // 
             this.providerDataGridView.AllowUserToAddRows = false;
             this.providerDataGridView.AllowUserToDeleteRows = false;
+            this.providerDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.providerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.providerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProviderCode,
@@ -706,7 +714,7 @@
             // 
             // providerToolbar
             // 
-            this.providerToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.providerToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.providerToolbar.Controls.Add(this.deleteProviderButton);
             this.providerToolbar.Controls.Add(this.changeButton);
             this.providerToolbar.Controls.Add(this.addProviderButton);
@@ -760,6 +768,7 @@
             // 
             this.productDataGridView.AllowUserToAddRows = false;
             this.productDataGridView.AllowUserToDeleteRows = false;
+            this.productDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Product_code,
@@ -793,7 +802,7 @@
             // 
             // productToolbar
             // 
-            this.productToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.productToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.productToolbar.Controls.Add(this.sendToDefectiveButton);
             this.productToolbar.Controls.Add(this.deleteProductButton);
             this.productToolbar.Controls.Add(this.acceptProductsButton);
@@ -867,7 +876,7 @@
             // 
             // defectiveProductToolbar
             // 
-            this.defectiveProductToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.defectiveProductToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.defectiveProductToolbar.Controls.Add(this.sendTheProductForProcessingButton);
             this.defectiveProductToolbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.defectiveProductToolbar.Location = new System.Drawing.Point(0, 0);
@@ -889,6 +898,7 @@
             // 
             this.defectiveProductDataGridView.AllowUserToAddRows = false;
             this.defectiveProductDataGridView.AllowUserToDeleteRows = false;
+            this.defectiveProductDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.defectiveProductDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.defectiveProductDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Defective_product_code,
@@ -937,6 +947,7 @@
             // 
             // productionOrderPanel
             // 
+            this.productionOrderPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.productionOrderPanel.Controls.Add(this.productionOrderDataGridView);
             this.productionOrderPanel.Location = new System.Drawing.Point(287, 0);
             this.productionOrderPanel.Name = "productionOrderPanel";
@@ -948,6 +959,7 @@
             // 
             this.productionOrderDataGridView.AllowUserToAddRows = false;
             this.productionOrderDataGridView.AllowUserToDeleteRows = false;
+            this.productionOrderDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.productionOrderDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productionOrderDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Order_code,
@@ -985,13 +997,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.materialsPanel);
             this.Controls.Add(this.productionOrderPanel);
             this.Controls.Add(this.suppliesPanel);
             this.Controls.Add(this.consumablePanel);
             this.Controls.Add(this.providerPanel);
             this.Controls.Add(this.productPanel);
             this.Controls.Add(this.defectiveProductPanel);
-            this.Controls.Add(this.materialsPanel);
             this.Controls.Add(this.menuFlowLayoutPanel);
             this.MaximizeBox = false;
             this.Name = "FactoryWarehouseWorkerForm";

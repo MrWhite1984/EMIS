@@ -68,12 +68,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(310, 89);
             this.Controls.Add(this.acceptButton);
             this.Controls.Add(this.quantityTextBox);
             this.Controls.Add(this.quantityLabel);
             this.Name = "AcceptProductForm";
-            this.Text = "AcceptProductForm";
+            this.Text = "Принять продукт";
             this.ResumeLayout(false);
             this.PerformLayout();
 

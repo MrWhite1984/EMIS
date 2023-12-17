@@ -48,7 +48,7 @@
             this.passwordField.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.passwordField.Location = new System.Drawing.Point(256, 253);
             this.passwordField.Name = "passwordField";
-            this.passwordField.PasswordChar = '*';
+            this.passwordField.PasswordChar = '•';
             this.passwordField.PlaceholderText = "Пароль";
             this.passwordField.Size = new System.Drawing.Size(276, 32);
             this.passwordField.TabIndex = 1;
@@ -69,6 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.sendButton);
             this.Controls.Add(this.passwordField);

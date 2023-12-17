@@ -124,6 +124,7 @@
             // 
             this.menuFlowLayoutPanel.AutoScroll = true;
             this.menuFlowLayoutPanel.AutoScrollMargin = new System.Drawing.Size(1, 0);
+            this.menuFlowLayoutPanel.BackColor = System.Drawing.Color.Gold;
             this.menuFlowLayoutPanel.Controls.Add(this.usersDataButton);
             this.menuFlowLayoutPanel.Controls.Add(this.settingsButton);
             this.menuFlowLayoutPanel.Controls.Add(this.storesSettingsButton);
@@ -188,6 +189,7 @@
             // 
             // userPanel
             // 
+            this.userPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.userPanel.Controls.Add(this.usersToolbar);
             this.userPanel.Controls.Add(this.userDataGridView);
             this.userPanel.Location = new System.Drawing.Point(287, 0);
@@ -198,7 +200,7 @@
             // 
             // usersToolbar
             // 
-            this.usersToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.usersToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.usersToolbar.Controls.Add(this.deleteUserButton);
             this.usersToolbar.Controls.Add(this.changeUserButton);
             this.usersToolbar.Controls.Add(this.addUserButton);
@@ -240,6 +242,10 @@
             // 
             // userDataGridView
             // 
+            this.userDataGridView.AllowUserToAddRows = false;
+            this.userDataGridView.AllowUserToDeleteRows = false;
+            this.userDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.userDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.userDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UserCode,
@@ -257,28 +263,24 @@
             this.UserCode.HeaderText = "Код пользователя";
             this.UserCode.Name = "UserCode";
             this.UserCode.ReadOnly = true;
-            this.UserCode.Width = 140;
             // 
             // Worker
             // 
             this.Worker.HeaderText = "Рабочий";
             this.Worker.Name = "Worker";
             this.Worker.ReadOnly = true;
-            this.Worker.Width = 400;
             // 
             // UserLogIn
             // 
             this.UserLogIn.HeaderText = "Логин пользователя";
             this.UserLogIn.Name = "UserLogIn";
             this.UserLogIn.ReadOnly = true;
-            this.UserLogIn.Width = 140;
             // 
             // UserPassword
             // 
             this.UserPassword.HeaderText = "Пароль пользователя";
             this.UserPassword.Name = "UserPassword";
             this.UserPassword.ReadOnly = true;
-            this.UserPassword.Width = 140;
             // 
             // settingsPanel
             // 
@@ -294,7 +296,7 @@
             // settingsElementPanel
             // 
             this.settingsElementPanel.AutoScroll = true;
-            this.settingsElementPanel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.settingsElementPanel.BackColor = System.Drawing.Color.Silver;
             this.settingsElementPanel.Controls.Add(this.OrderListLocationViewButton);
             this.settingsElementPanel.Controls.Add(this.orderListLocationTextBox);
             this.settingsElementPanel.Controls.Add(this.OrderListLocationLabel);
@@ -367,7 +369,7 @@
             // 
             // settingsToolbar
             // 
-            this.settingsToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.settingsToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.settingsToolbar.Controls.Add(this.exportFromJSONToDB);
             this.settingsToolbar.Controls.Add(this.eportDataFromDataBaseButton);
             this.settingsToolbar.Controls.Add(this.createNewDBButton);
@@ -435,7 +437,7 @@
             // 
             // usersFormPanel
             // 
-            this.usersFormPanel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.usersFormPanel.BackColor = System.Drawing.Color.Silver;
             this.usersFormPanel.Controls.Add(this.openStoreWarehouseWorkerFormButton);
             this.usersFormPanel.Controls.Add(this.directorFormButton);
             this.usersFormPanel.Controls.Add(this.HRFormButton);
@@ -519,7 +521,7 @@
             // 
             // developerMenu
             // 
-            this.developerMenu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.developerMenu.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.developerMenu.Controls.Add(this.developerSettingsButton);
             this.developerMenu.Controls.Add(this.dropAllSettingsButton);
             this.developerMenu.Controls.Add(this.openUsersFormButton);
@@ -583,6 +585,9 @@
             // 
             // storesDataGridView
             // 
+            this.storesDataGridView.AllowUserToAddRows = false;
+            this.storesDataGridView.AllowUserToDeleteRows = false;
+            this.storesDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.storesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.storesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Store_code,
@@ -641,7 +646,7 @@
             // 
             // storesToolbar
             // 
-            this.storesToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.storesToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.storesToolbar.Controls.Add(this.addStoreButton);
             this.storesToolbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.storesToolbar.Location = new System.Drawing.Point(0, 0);
@@ -661,7 +666,7 @@
             // 
             // storesSettingsToolbar
             // 
-            this.storesSettingsToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.storesSettingsToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.storesSettingsToolbar.Controls.Add(this.warehousesButton);
             this.storesSettingsToolbar.Controls.Add(this.storesButton);
             this.storesSettingsToolbar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -692,6 +697,7 @@
             // 
             // sqlRequestPanel
             // 
+            this.sqlRequestPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.sqlRequestPanel.Controls.Add(this.sqlRequestContentPanel);
             this.sqlRequestPanel.Controls.Add(this.sqlRequestToolBar);
             this.sqlRequestPanel.Location = new System.Drawing.Point(287, 0);
@@ -702,7 +708,7 @@
             // 
             // sqlRequestContentPanel
             // 
-            this.sqlRequestContentPanel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.sqlRequestContentPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.sqlRequestContentPanel.Controls.Add(this.sqlRequestBackgroundAnswerPanel);
             this.sqlRequestContentPanel.Controls.Add(this.sqlRequestTextTextBox);
             this.sqlRequestContentPanel.Location = new System.Drawing.Point(0, 59);
@@ -712,7 +718,7 @@
             // 
             // sqlRequestBackgroundAnswerPanel
             // 
-            this.sqlRequestBackgroundAnswerPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sqlRequestBackgroundAnswerPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.sqlRequestBackgroundAnswerPanel.Controls.Add(this.sqlAnswerLabel);
             this.sqlRequestBackgroundAnswerPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.sqlRequestBackgroundAnswerPanel.Location = new System.Drawing.Point(0, 392);
@@ -722,8 +728,10 @@
             // 
             // sqlAnswerLabel
             // 
+            this.sqlAnswerLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.sqlAnswerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sqlAnswerLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sqlAnswerLabel.ForeColor = System.Drawing.Color.Gold;
             this.sqlAnswerLabel.Location = new System.Drawing.Point(0, 0);
             this.sqlAnswerLabel.Name = "sqlAnswerLabel";
             this.sqlAnswerLabel.Size = new System.Drawing.Size(1617, 590);
@@ -740,7 +748,7 @@
             // 
             // sqlRequestToolBar
             // 
-            this.sqlRequestToolBar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sqlRequestToolBar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.sqlRequestToolBar.Controls.Add(this.showBuiltInQueriesButton);
             this.sqlRequestToolBar.Controls.Add(this.sqlRequestApplyButton);
             this.sqlRequestToolBar.Dock = System.Windows.Forms.DockStyle.Top;

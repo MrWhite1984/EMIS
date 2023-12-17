@@ -119,6 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(447, 322);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.productPriceTextBox);
@@ -130,7 +131,7 @@
             this.Controls.Add(this.ProductNameLabel);
             this.Controls.Add(this.productCodeLabel);
             this.Name = "AddProductForm";
-            this.Text = "AddProductForm";
+            this.Text = "Добавить продукт";
             this.Load += new System.EventHandler(this.AddProductForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

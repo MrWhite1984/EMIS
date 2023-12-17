@@ -59,6 +59,7 @@
             // 
             // menuFlowLayoutPanel
             // 
+            this.menuFlowLayoutPanel.BackColor = System.Drawing.Color.Gold;
             this.menuFlowLayoutPanel.Controls.Add(this.workersButton);
             this.menuFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
@@ -88,6 +89,7 @@
             // 
             // workersDataGridView
             // 
+            this.workersDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.workersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.workersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Worker_code,
@@ -177,7 +179,7 @@
             // 
             // workersToolbar
             // 
-            this.workersToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.workersToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.workersToolbar.Controls.Add(this.deleteWorkerButton);
             this.workersToolbar.Controls.Add(this.filterWorkerButton);
             this.workersToolbar.Controls.Add(this.changeWorkerButton);

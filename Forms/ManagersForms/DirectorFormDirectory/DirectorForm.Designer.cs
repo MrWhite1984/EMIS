@@ -48,6 +48,7 @@
             // 
             // menuFlowLayoutPanel
             // 
+            this.menuFlowLayoutPanel.BackColor = System.Drawing.Color.Gold;
             this.menuFlowLayoutPanel.Controls.Add(this.productsButton);
             this.menuFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
@@ -78,6 +79,7 @@
             // 
             // productDataGridView
             // 
+            this.productDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Product_code,
@@ -120,7 +122,7 @@
             // 
             // productsToolbar
             // 
-            this.productsToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.productsToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.productsToolbar.Controls.Add(this.addProductButton);
             this.productsToolbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.productsToolbar.Location = new System.Drawing.Point(0, 0);
@@ -146,7 +148,7 @@
             this.Controls.Add(this.productsPanel);
             this.Controls.Add(this.menuFlowLayoutPanel);
             this.Name = "DirectorForm";
-            this.Text = "DirectorForm";
+            this.Text = "EMIS - Директор";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DirectorForm_FormClosed);
             this.Load += new System.EventHandler(this.DirectorForm_Load);

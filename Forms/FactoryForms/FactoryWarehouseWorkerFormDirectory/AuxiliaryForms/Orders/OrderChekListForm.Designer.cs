@@ -41,6 +41,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -50,6 +51,7 @@
             // orderListDataGridView
             // 
             this.orderListDataGridView.AllowUserToAddRows = false;
+            this.orderListDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.orderListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.orderListDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Item_code,
@@ -107,7 +109,7 @@
             this.Controls.Add(this.orderListDataGridView);
             this.Controls.Add(this.panel1);
             this.Name = "OrderChekListForm";
-            this.Text = "OrderChekListForm";
+            this.Text = "Состав заказа";
             this.Load += new System.EventHandler(this.OrderChekListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.orderListDataGridView)).EndInit();
             this.ResumeLayout(false);

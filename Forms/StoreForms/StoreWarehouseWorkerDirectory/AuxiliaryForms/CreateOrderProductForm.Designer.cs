@@ -40,6 +40,7 @@
             // 
             // Toolbar
             // 
+            this.Toolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Toolbar.Controls.Add(this.createOrder);
             this.Toolbar.Controls.Add(this.StoreComboBox);
             this.Toolbar.Controls.Add(this.StoreLabel);
@@ -76,6 +77,7 @@
             // StoreLabel
             // 
             this.StoreLabel.AutoSize = true;
+            this.StoreLabel.ForeColor = System.Drawing.Color.Gold;
             this.StoreLabel.Location = new System.Drawing.Point(3, 9);
             this.StoreLabel.Name = "StoreLabel";
             this.StoreLabel.Size = new System.Drawing.Size(54, 15);
@@ -84,6 +86,7 @@
             // 
             // productOrderItemDataGridView
             // 
+            this.productOrderItemDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.productOrderItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productOrderItemDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productName,

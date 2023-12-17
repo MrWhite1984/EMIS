@@ -56,13 +56,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(291, 74);
             this.Controls.Add(this.createTriggerQueryButton);
             this.Controls.Add(this.createTableQueryButton);
             this.MaximumSize = new System.Drawing.Size(307, 113);
             this.MinimumSize = new System.Drawing.Size(307, 113);
             this.Name = "SelectQueryForm";
-            this.Text = "SelectQueryForm";
+            this.Text = "Выбрать";
             this.ResumeLayout(false);
 
         }

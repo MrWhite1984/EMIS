@@ -86,17 +86,18 @@ namespace Enterprise_Managment_IS.Forms.FactoryWarehouseWorkerFormDirectory.Auxi
             this.productNameComboBox.Size = new System.Drawing.Size(545, 23);
             this.productNameComboBox.TabIndex = 7;
             // 
-            // AddProductForm
+            // AddFactoryProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(700, 119);
             this.Controls.Add(this.productNameComboBox);
             this.Controls.Add(this.addProductButton);
             this.Controls.Add(this.productCodeTextBox);
             this.Controls.Add(this.productNameLabel);
             this.Controls.Add(this.productCodeLabel);
-            this.Name = "AddProductForm";
+            this.Name = "AddFactoryProductForm";
             this.Text = "Добавить продукт";
             this.Load += new System.EventHandler(this.AddProductForm_Load);
             this.ResumeLayout(false);

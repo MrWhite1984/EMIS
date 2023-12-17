@@ -68,12 +68,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(580, 278);
             this.Controls.Add(this.SendFactoryProductToDefectiveButton);
             this.Controls.Add(this.descriptionOfTheDefectTextBox);
             this.Controls.Add(this.descriptionOfTheDefectLabel);
             this.Name = "SendFactoryProductToDefectiveForm";
-            this.Text = "SendFactoryProductToDefectiveForm";
+            this.Text = "Отбраковка продукта";
             this.ResumeLayout(false);
             this.PerformLayout();
 

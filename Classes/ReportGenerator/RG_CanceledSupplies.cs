@@ -66,7 +66,7 @@ namespace Enterprise_Managment_IS.Classes.ReportGenerator
             doc.SaveAs(path + $@"\ОтчетПоОтмененнымПоставкам({DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}).doc");
             doc.Close();
             word.Quit();
-            MessageBox.Show($"Сохранено в файл: ОтчетПоОтмененнымПоставкам({DateTime.Now}).doc");
+            MessageBox.Show($"Сохранено в файл: ОтчетПоОтмененнымПоставкам({DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}_{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}).doc");
             return "Ok";
         }
     }

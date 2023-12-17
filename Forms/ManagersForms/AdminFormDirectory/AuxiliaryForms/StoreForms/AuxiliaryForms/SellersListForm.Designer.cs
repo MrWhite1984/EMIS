@@ -42,6 +42,7 @@
             // 
             // sellersDataGridView
             // 
+            this.sellersDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.sellersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sellersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SellerData});
@@ -67,6 +68,7 @@
             // 
             this.sellersLabel.AutoSize = true;
             this.sellersLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sellersLabel.ForeColor = System.Drawing.Color.Gold;
             this.sellersLabel.Location = new System.Drawing.Point(12, 9);
             this.sellersLabel.Name = "sellersLabel";
             this.sellersLabel.Size = new System.Drawing.Size(102, 25);
@@ -87,12 +89,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.writeAndCloseButton);
             this.Controls.Add(this.sellersLabel);
             this.Controls.Add(this.sellersDataGridView);
             this.Name = "SellersListForm";
-            this.Text = "SellersListForm";
+            this.Text = "Продавцы";
             this.Load += new System.EventHandler(this.SellersListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sellersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellersComboBoxBindingSource)).EndInit();

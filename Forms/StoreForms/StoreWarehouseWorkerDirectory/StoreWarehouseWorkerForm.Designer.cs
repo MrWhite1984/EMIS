@@ -50,6 +50,7 @@
             // menuFlowLayoutPanel
             // 
             this.menuFlowLayoutPanel.AutoScroll = true;
+            this.menuFlowLayoutPanel.BackColor = System.Drawing.Color.Gold;
             this.menuFlowLayoutPanel.Controls.Add(this.productsButton);
             this.menuFlowLayoutPanel.Controls.Add(this.ordersToFactoryButton);
             this.menuFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -91,6 +92,7 @@
             // 
             // productionOrderDataGridView
             // 
+            this.productionOrderDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.productionOrderDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productionOrderDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Order_code,
@@ -126,7 +128,7 @@
             // 
             // productionOrderToolbar
             // 
-            this.productionOrderToolbar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.productionOrderToolbar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.productionOrderToolbar.Controls.Add(this.deleteOrderButton);
             this.productionOrderToolbar.Controls.Add(this.createOrder);
             this.productionOrderToolbar.Dock = System.Windows.Forms.DockStyle.Top;

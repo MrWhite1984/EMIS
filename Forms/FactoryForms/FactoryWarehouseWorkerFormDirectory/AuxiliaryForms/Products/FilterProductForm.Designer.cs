@@ -78,13 +78,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(689, 91);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.filterTextTextBox);
             this.Controls.Add(this.filterTextLabel);
             this.Name = "FilterProductForm";
-            this.Text = "FilterProductForm";
+            this.Text = "Фильтровать продукты";
             this.ResumeLayout(false);
             this.PerformLayout();
 

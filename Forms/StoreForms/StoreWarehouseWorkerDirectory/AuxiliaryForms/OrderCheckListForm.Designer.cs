@@ -44,6 +44,7 @@
             // 
             this.orderElementsDataGridView.AllowUserToAddRows = false;
             this.orderElementsDataGridView.AllowUserToDeleteRows = false;
+            this.orderElementsDataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.orderElementsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.orderElementsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Element_code,
@@ -106,10 +107,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.orderElementsDataGridView);
             this.Name = "OrderCheckListForm";
-            this.Text = "OrderCheckListForm";
+            this.Text = "Заказ";
             this.Load += new System.EventHandler(this.OrderCheckListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.orderElementsDataGridView)).EndInit();
             this.ResumeLayout(false);
