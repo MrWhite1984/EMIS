@@ -16,10 +16,10 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData
         public int id { get; set; }
         public string address { get; set; }
         public int directorCode { get; set; }
-        public int phone { get; set; }
+        public long phone { get; set; }
         public string sellers { get; set; }
         public int warehouseWorkerCode { get; set; }
-        public Store(int id, string address, int directorCode, int phone, string sellers, int warehouseWorkerCode)
+        public Store(int id, string address, int directorCode, long phone, string sellers, int warehouseWorkerCode)
         {
             this.id = id;
             this.address = address;
@@ -38,7 +38,7 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData
             char whiteSpace = ' ';
             foreach (var data in DataLoader_Stores.GetAllStores())
             {
-                stores.Add(new Store(Convert.ToInt32(data[0].TrimEnd(whiteSpace)), data[1].TrimEnd(whiteSpace), Convert.ToInt32(data[2].TrimEnd(whiteSpace).Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]), Convert.ToInt32(data[3].TrimEnd(whiteSpace)), data[4].TrimEnd(whiteSpace), Convert.ToInt32(data[5].TrimEnd(whiteSpace).Split(' ', StringSplitOptions.RemoveEmptyEntries)[0])));
+                stores.Add(new Store(Convert.ToInt32(data[0].TrimEnd(whiteSpace)), data[1].TrimEnd(whiteSpace), Convert.ToInt32(data[2].TrimEnd(whiteSpace).Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]), Convert.ToInt64(data[3].TrimEnd(whiteSpace)), data[4].TrimEnd(whiteSpace), Convert.ToInt32(data[5].TrimEnd(whiteSpace).Split(' ', StringSplitOptions.RemoveEmptyEntries)[0])));
             }
             var serializedelements = JsonSerializer.Serialize(
                 stores,

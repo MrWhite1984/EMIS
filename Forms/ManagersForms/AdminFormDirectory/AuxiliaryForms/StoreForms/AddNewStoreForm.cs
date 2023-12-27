@@ -45,7 +45,7 @@ namespace Enterprise_Managment_IS.Forms.ManagersForms.AdminFormDirectory.Auxilia
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            Store store = new Store(Convert.ToInt32(storeCodeTextBox.Text), storeAddressTextBox.Text, Convert.ToInt32(storeDirectorComboBox.Text.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]), Convert.ToInt32(phoneTextBox.Text), sellersTextBox.Text, Convert.ToInt32(warehouseWorkerComboBox.Text.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]));
+            Store store = new Store(Convert.ToInt32(storeCodeTextBox.Text), storeAddressTextBox.Text, Convert.ToInt32(storeDirectorComboBox.Text.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]), Convert.ToInt64(phoneTextBox.Text), sellersTextBox.Text, Convert.ToInt32(warehouseWorkerComboBox.Text.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]));
             DataAdder_Stores.AddNewStoreToDB(store);
             this.Close();
         }

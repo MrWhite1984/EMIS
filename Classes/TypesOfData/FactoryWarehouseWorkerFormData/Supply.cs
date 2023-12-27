@@ -55,7 +55,7 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.FactoryWarehouseWorkerForm
             List<Supply> supplies = JsonSerializer.Deserialize<List<Supply>>(File.ReadAllText(filePath));
             for (int counter = 0; counter < supplies.Count(); counter++)
             {
-                DataAdder_Supplies.AddNewSuppliesToDB(supplies[counter], conString);
+                DataAdder_Supplies.AddNewSuppliesImportToDB(supplies[counter], conString);
             }
         }
 

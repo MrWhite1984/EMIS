@@ -54,7 +54,7 @@ namespace Enterprise_Managment_IS.Classes.TypesOfData.AdminFormData
             List<Product> products = JsonSerializer.Deserialize<List<Product>>(File.ReadAllText(filePath));
             for (int counter = 0; counter < products.Count(); counter++)
             {
-                DataAdder_Products.AddNewProductsToDB(counter + 1, products[counter], conString);
+                DataAdder_Products.AddNewProductsToDB(0, products[counter], conString);
             }
         }
     }

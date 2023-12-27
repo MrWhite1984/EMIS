@@ -61,10 +61,10 @@ namespace Enterprise_Managment_IS.Classes.ReportGenerator
                     table.Cell(i, f).Range.Borders[WdBorderType.wdBorderLeft].LineStyle = WdLineStyle.wdLineStyleSingle;
                 }
             }
-            doc.SaveAs(path + $@"\ОтчетПоОтмененнымПоставкам({DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}).doc");
+            doc.SaveAs(path + $@"\ОтчетПоПроведеннымПоставкам({DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}_{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}).doc");
             doc.Close();
             word.Quit();
-            MessageBox.Show($"Сохранено в файл: ОтчетПоОтмененнымПоставкам({DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}_{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}).doc");
+            MessageBox.Show($"Сохранено в файл: ОтчетПоПроведеннымПоставкам({DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}_{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}).doc");
             return "Ok";
         }
     }

@@ -38,9 +38,9 @@ namespace Enterprise_Managment_IS.Classes.DataWorkerClasses.DataLoaderDescendant
                     data[data.Count - 1][3] = reader[3].ToString();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally
             {

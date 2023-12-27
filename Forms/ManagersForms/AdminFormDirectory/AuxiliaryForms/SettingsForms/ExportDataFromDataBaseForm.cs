@@ -31,7 +31,7 @@ namespace Enterprise_Managment_IS.Forms.AdminFormDirectory.SettingsForms
             User.ExportUsersToJson(pathToSave);
             Consumable.ExportConsumablesToJson(pathToSave);
             FactoryProduct.ExportProductsToJson(pathToSave);
-            FactoryProduct.ExportDefectiveFactoryProductsToJson(pathToSave);
+            DefectiveFactoryProducts.ExportDefectiveFactoryProductsToJson(pathToSave);
             IssueOfConsumables.ExportIssueOfConsumablesToJson(pathToSave);
             IssueOfMaterials.ExportIssueOfMaterialsToJson(pathToSave);
             Material.ExportMaterialsToJson(pathToSave);

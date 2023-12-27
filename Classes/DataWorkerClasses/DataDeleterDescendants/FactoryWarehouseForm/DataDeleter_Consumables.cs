@@ -30,8 +30,7 @@ namespace Enterprise_Managment_IS.Classes.DataWorkerClasses.DataDeleterDescendan
             finally
             {
                 sqlConnection.Close();
-            }
-            
+            }            
         }
     }
 }

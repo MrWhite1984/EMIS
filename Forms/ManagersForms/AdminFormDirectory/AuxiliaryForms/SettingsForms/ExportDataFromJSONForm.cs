@@ -35,7 +35,7 @@ namespace Enterprise_Managment_IS.Forms.AdminFormDirectory.SettingsForms
             Supply.ImportConductedSuppliesFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
             Product.ImportProductsFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
             FactoryProduct.ImportProductsFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
-            FactoryProduct.ImportDefectiveFactoryProductsFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
+            DefectiveFactoryProducts.ImportDefectiveFactoryProductsFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
             Store.ImportStoresFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
             IssueOfConsumables.ImportIssueOfConsumablesFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
             IssueOfMaterials.ImportIssueOfMaterialsFromJson(pathAndConnStr.Item1, pathAndConnStr.Item2);
